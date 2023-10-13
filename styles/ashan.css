@@ -17,3 +17,6 @@ body {
 .aside.p{
   text-align: justify;
 }
+.emdisable{
+  pointer-events: none;
+}

@@ -1,0 +1,19 @@
+body {
+    margin-top: 3%; /* This margin just makes the text easier to read. You can remove it if you want since it can mess with your other styles. */
+  }
+  .pdf{
+    position: relative; 
+    top: -2px; 
+    width:25px;
+  }
+  .bg{
+    background-color: rgb(245, 245, 241);
+    padding: 5%;
+    border-radius:20px;
+  }
+  a{
+    word-wrap: break-word;
+  }
+.aside.p{
+  text-align: justify;
+}

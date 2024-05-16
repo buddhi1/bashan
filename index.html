@@ -18,45 +18,81 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/ashan.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
   </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="d-flex flex-grow-1">
+          <span class="w-100 d-lg-none d-block">
+            <!-- hidden spacer to center brand on mobile -->
+          </span>
+          <a class="navbar-brand" href="index.html">
+              
+          </a>
+          <div class="w-100 text-right">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+          </div>
+      </div>
+      <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+          <ul class="navbar-nav ml-auto flex-nowrap">
+              <li class="nav-item">
+                  <a href="#" class="nav-link active">About Me</a>
+              </li>
+              <li class="nav-item">
+                  <a href="card1.html" class="nav-link ">Research</a>
+              </li>
+              <li class="nav-item">
+                  <a href="misc/Buddhi Ashan M K.pdf" class="nav-link">Resume</a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+</header>
   <body>
     <!-- header line -->
-    <header>
-       <!-- <div class="card-header" style="height: 200px;">
-    </div> -->
-  </header>
+    
     <div class="container">
       <main class="row">
         <div class="col-md-4" >
-           <img src="img/BuddhiAshan.jpeg" class="card-img-top" alt="mkba" style="border-radius: 20px;" />
+         <br><br>
+           <img src="img/BuddhiAshan.jpeg" class="card-img-top" alt="mkba" style="border-radius: 10px;" />
            <br>
            <br>
            
            <div class="bg">
-            <h2>Buddhi Ashan</h2>
+            <h1>Buddhi Ashan</h1>
             <h4>Mallika Kankanamalage</h4>
           </div>
           <br>
           <p>PhD Candidate in Computer Science <br>
-            <a href="https://www.utsa.edu/">The University of Texas at San Antonio</a></p>
+            <a href="https://www.utsa.edu/">The University of Texas at San Antonio</a>
+          </p>
           <p>Pronouns: He/ Him/ His</p>
-          <p>
-            <div >Email :
-            <a href="mailto:buddhiashan.mallikakankanamalage1@utsa.edu"  class="text-wrap emdisable"> buddhiashan.mallikakankanamalage@utsa.edu</a>
-          </div>
+         <p>
+            <div >
+              <img src="img/outlook_logo.png" class="uotlook" alt=""> </a>
+             <a href="mailto:buddhiashan.mallikakankanamalage1@utsa.edu"  class="text-wrap emdisable"> buddhiashan.mallikakankanamalage@utsa.edu</a>
+           </div>
         </p>
         <p>
-          <div >Linkedin :
-          <a href="https://www.linkedin.com/in/buddhiashan" target="_blank"> Buddhi Ashan M. K.</a>
-        </div>
-      </p>
-      <p>
-        <div>Curriculum Vitae
-            <a href="misc/Buddhi Ashan M K.pdf" target="_blank"><p>
-              Buddhi Ashan M K <img src="img/pdf.png" class="pdf" alt=""> </p></a>
-            <!-- <img src="img/pdf.png" class="pdf" alt=""> -->
-         
-          </div> </p>
+          <div class="div_top"> 
+            <a href="misc/Buddhi Ashan M K.pdf" target="_blank">Resume</a> 
+              <!-- <img src="img/pdf.png" class="pdf" alt=""> -->
+           
+          </div> 
+        </p>
+        <p>
+          <div class="div_top">
+           <a href="https://www.linkedin.com/in/buddhiashan" target="_blank"> <img src="img/Linkedin.png" class="linkedin" alt=""> </a>
+           <a href="https://scholar.google.com/citations?user=xYSm9AUAAAAJ&hl=en" target="_blank"> <img src="img/Google_Scholar_logo.png" class="pdf" alt="no_img"> </a>
+           <a href="https://orcid.org/0009-0000-9961-4384" target="_blank"> <img src="img/orcid_logo.svg" class="pdf" alt=""> </a>
+         </div>
+       </p>
+      
+   
+  
         </div>
         
         <div class="col-md-8" class="info">

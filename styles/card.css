@@ -46,3 +46,7 @@ img{
     margin-right: auto;
     display: block;
 }
+.btn-primary{
+    background-color: #569fee;
+    border-color: #569fee;
+}

@@ -5,13 +5,13 @@ body {
 .info{
   letter-spacing: 10%;
 }
-.uotlook, .pdf{
+.uotlook, .scholar{
   position: relative; 
   top: -2px; 
-  height:30px;
+  height:23px;
   margin-right: 20px;
 }
-.pdf{
+.scholar{
   margin-bottom: 20px;
 }
 .logo:hover{
@@ -19,7 +19,7 @@ text-decoration:none;
 }
 .linkedin{
   position:relative;
-  height: 30px;
+  height: 25px;
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -27,12 +27,14 @@ text-decoration:none;
   margin-top: 30px;
 }
 .bg{
-  background-color: rgb(240, 240, 240);
+  text-align: center;
+  background-color: rgb(243 245 246);
   padding: 5%;    
-  border-radius:30px;
+  border-radius:10px;
 }
 a{
   word-wrap: break-word;
+  color: #4a7aae;
 }
 .aside.p{
   text-align: justify; 

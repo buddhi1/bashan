@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShapeToVec+ Explainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="frame">
+    <svg id="stage" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" role="img"
+         aria-label="Animated explainer: shape similarity search, ShapeToVec, and ShapeToVec+"></svg>
+
+    <nav id="controls" aria-label="Playback controls">
+      <button id="prev" title="Previous scene (←)" aria-label="Previous scene">&#9198;</button>
+      <button id="play" title="Play / pause (Space)" aria-label="Play or pause">&#10073;&#10073;</button>
+      <button id="next" title="Next scene (→)" aria-label="Next scene">&#9197;</button>
+      <div id="segments"></div>
+      <span id="clock">0:00</span>
+      <button id="loop" class="on" title="Loop (L)" aria-label="Toggle loop">&#10227;</button>
+      <button id="full" title="Fullscreen (F)" aria-label="Fullscreen">&#9974;</button>
+    </nav>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

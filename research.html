@@ -55,8 +55,8 @@
         <div class="stats" aria-label="Key results">
           <div class="stat"><span class="v">O(log n)</span><span class="l">PRAM clipping time, no perturbation</span></div>
           <div class="stat"><span class="v">99%</span><span class="l">edge pairs eliminated by the segment tree</span></div>
-          <div class="stat"><span class="v">1.7 M → 1.05 B</span><span class="l">polygons searched, 2025 → 2026</span></div>
-          <div class="stat"><span class="v">13 TB → 181 GB</span><span class="l">index for a billion polygons</span></div>
+          <div class="stat"><span class="v">1.7 M → 90 M</span><span class="l">real-world polygons searched, 2025 → 2026</span></div>
+          <div class="stat"><span class="v">13 TB → 181 GB</span><span class="l">index for 1.05 B polygons on one server</span></div>
         </div>
       </section>
 
@@ -157,13 +157,16 @@
         <h2 id="encoding-heading">Encoding geometry for billion-scale search</h2>
         <div class="research-text">
           <p>
-            How can we answer the following query: <em>find the shapes in this dataset that look like this one.</em> A brute force answer may intersect the query with every candidate in the database and rank them based on theyr Jaccard score. However, approximate nearest-neighbor (ANN) search is the practical alternative, but it needs feature vectors that preserve shape. A uniform grid is unable to preseve the shape properties over a polygonal dataset of exponential area variations. Real polygon collections vary in area by orders of magnitude, so one grid is too coarse for the small shapes and too fine for the large ones.
+            How can we answer the following query: <em>find the shapes in this dataset that look like this one.</em> A brute force answer may intersect the query with every candidate in the database and rank them based on their Jaccard score. However, approximate nearest-neighbor (ANN) search is the practical alternative, but it needs feature vectors that preserve shape. A uniform grid is unable to preserve the shape properties over a polygonal dataset of exponential area variations. Real polygon collections vary in area by orders of magnitude, so one grid is too coarse for the small shapes and too fine for the large ones.
           </p>
           <p>
             <strong>ShapeToVec</strong> encodes each polygon on a quadtree grid that refines only where the boundary passes. That keeps both shape and area across the whole size range. The right similarity measure for shapes is weighted Jaccard, the ratio of intersection area to union area, not Euclidean distance. I implemented it natively inside the HNSW index in NMSLIB. The system reaches 97% recall on top-50 queries over 1.7 million polygons. It is the first system to run shape-based Jaccard search at this scale (IEEE BigData 2025).
           </p>
           <p>
-            Now, recall is not the limit, memory is. <strong>ShapeToVec+</strong> (ACM SIGSPATIAL 2026) separates area from the stored signature. The signature keeps only cell occupancy. A small look-up table supplies the true cell areas at query time. This gives 4× compression with 8-bit integers and 8× to 32× with bit encodings, with the metric intact. A product quantizer built for weighted Jaccard (under review) pushes the same line to 1.05 billion polygons on one commodity server.
+            Now, recall is not the limit, memory is. <strong>ShapeToVec+</strong> (ACM SIGSPATIAL 2026) separates area from the stored signature. The signature keeps only cell occupancy. A small look-up table supplies the true cell areas at query time. This gives 4× compression with 8-bit integers and 8× to 32× with bit encodings, with the metric intact. On up to 90 million real-world polygons, these compact indexes fit in standard server memory.
+          </p>
+          <p>
+            Reaching a billion polygons needs product quantization (PQ). PQ sums distance tables across subspaces. That works for Euclidean distance, but weighted Jaccard is a ratio of sums, so standard PQ breaks it. <strong>JPQ</strong> (IEEE BigData 2026) is the first product quantizer built for weighted Jaccard. It stores each 3,082-dimensional vector in 64 bytes. An index of 1.05 billion polygons shrinks from 13 TB to 181 GB and serves 9,500 queries per second on one server.
           </p>
         </div>
 
@@ -174,7 +177,7 @@
           </figure>
           <figure class="figure">
             <div class="fig"><img src="img/research/shapetovecplus-overview.png" alt="ShapeToVec+ pipeline: polygon centering and quadtree generation feed a cell-area look-up table and compact signatures, then an HNSW index with SIMD weighted-Jaccard distance" loading="lazy" /></div>
-            <figcaption>ShapeToVec+ (ACM SIGSPATIAL 2026).</figcaption>
+            <figcaption>ShapeToVec+ (ACM SIGSPATIAL 2026). <a href="assets/sigspatial26/index.html" target="_blank" rel="noopener noreferrer">Watch the poster animation</a>.</figcaption>
           </figure>
         </div>
 
@@ -331,7 +334,9 @@
         <div class="links">
           <a href="https://ieeexplore.ieee.org/document/11401899" target="_blank" rel="noopener noreferrer">IEEE BigData 2025 paper</a>
           <a href="https://doi.org/10.1145/3841645.3843377" target="_blank" rel="noopener noreferrer">ACM SIGSPATIAL 2026 paper</a>
+          <a href="assets/sigspatial26/index.html" target="_blank" rel="noopener noreferrer">SIGSPATIAL 2026 poster animation</a>
           <a href="https://github.com/buddhi1/shape-similarity" target="_blank" rel="noopener noreferrer">Code: shape-similarity</a>
+          <a href="https://github.com/buddhi1/jpq" target="_blank" rel="noopener noreferrer">Code: jpq</a>
           <a href="https://doi.org/10.5281/zenodo.11522173" target="_blank" rel="noopener noreferrer">Benchmark dataset (1.3 TB)</a>
           <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2313039&amp;HistoricalAwards=false" target="_blank" rel="noopener noreferrer">NSF #2313039</a>
         </div>

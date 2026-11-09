@@ -77,17 +77,33 @@
         <article class="card project" id="shapetovec-plus">
           <div class="project-media"><img src="img/research/shapetovecplus-overview.png" alt="ShapeToVec+ system overview diagram" loading="lazy" /></div>
           <div class="project-body">
-            <div class="badges"><span class="badge">ACM SIGSPATIAL 2026</span><span class="badge badge-soft">JPQ under review</span></div>
-            <h2>ShapeToVec+: compressing the index toward a billion polygons</h2>
+            <div class="badges"><span class="badge">ACM SIGSPATIAL 2026</span><span class="badge">Short paper</span></div>
+            <h2>ShapeToVec+: compact signatures with the metric intact</h2>
             <p>
-              Recall was not the binding constraint for ShapeToVec; memory was. ShapeToVec+ decouples area from the stored signature, where the signature carries only grid-cell occupancy, while a precomputed cell-area look-up table supplies the true weights at query time. Integer-arithmetic encoding gives 4× compression and bitwise encoding 8× to 32×, with the weighted-Jaccard metric intact and SIMD distance kernels at query time. We are extending this work with JPQ, the first product quantizer formulated for weighted Jaccard, which stores each 3,082-dimensional vector in 64 bytes and brings a 1.05-billion-polygon index within commodity server memory.
+              Recall was not the binding constraint for ShapeToVec; memory was. ShapeToVec+ decouples area from the stored signature, where the signature carries only grid-cell occupancy, while a precomputed cell-area look-up table supplies the true weights at query time. Integer-arithmetic encoding gives 4× compression and bitwise encoding 8× to 32×, with the weighted-Jaccard metric intact and SIMD distance kernels at query time. On up to 90 million real-world Overture Maps polygons, the compact indexes fit in standard server memory, where the float32 baseline runs out of memory.
             </p>
-            <div class="tags"><span class="tag">Compression</span><span class="tag">Bitwise encoding</span><span class="tag">SIMD</span><span class="tag">Product quantization</span></div>
+            <div class="tags"><span class="tag">Compression</span><span class="tag">Integer &amp; bitwise encoding</span><span class="tag">Cell-area look-up table</span><span class="tag">SIMD</span></div>
             <div class="links">
               <a href="https://doi.org/10.1145/3841645.3843377" target="_blank" rel="noopener noreferrer">Paper</a>
               <a href="https://github.com/buddhi1/shape-similarity" target="_blank" rel="noopener noreferrer">Code</a>
-              <a href="https://github.com/buddhi1/jpq" target="_blank" rel="noopener noreferrer">Code: JPQ</a>
+              <a href="assets/sigspatial26/index.html" target="_blank" rel="noopener noreferrer">Poster animation</a>
               <a href="research.html#anim-quadtree">Animation: quadtree encoding</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project wide stacked" id="jpq">
+          <div class="project-media"><img src="img/research/jpq-overview.png" alt="JPQ system architecture: a GPU encoder produces float32 signatures for the JPQ codebook and HNSW index in memory, and 2- and 4-bit signatures plus a cell-area look-up table on disk; queries use a weighted-Jaccard distance table, JPQ top-k search, and an optional brute-force refinement" loading="lazy" /></div>
+          <div class="project-body">
+            <div class="badges"><span class="badge">IEEE BigData 2026</span><span class="badge">Short paper</span><span class="badge">Acceptance rate 19.2%</span><span class="badge">To appear</span></div>
+            <h2>JPQ: product quantization for weighted Jaccard, at billion scale</h2>
+            <p>
+              Product quantization (PQ) is how vector search reaches a billion items. Its speed comes from distance tables that are summed across subspaces. That works for Euclidean distance, but weighted Jaccard is a ratio of sums, so a sum of per-subspace scores is not a Jaccard score. JPQ is the first product quantizer formulated for the weighted-Jaccard metric. At the same code size it raises Recall@50 from 66% to 81% over standard Euclidean PQ, and to 93% after refining only 100 candidates with compact on-disk signatures. At 1.05 billion polygons, JPQ stores each 3,082-dimensional vector in 64 bytes, a 190× reduction: the index takes 181 GB instead of 13 TB and serves 9,500 queries per second on a single server.
+            </p>
+            <div class="tags"><span class="tag">Product quantization</span><span class="tag">Weighted Jaccard</span><span class="tag">HNSW · NMSLIB</span><span class="tag">GPU encoding</span><span class="tag">Filter and refine</span></div>
+            <div class="links">
+              <a href="https://github.com/buddhi1/jpq" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2313039&amp;HistoricalAwards=false" target="_blank" rel="noopener noreferrer">NSF #2313039</a>
             </div>
           </div>
         </article>
@@ -139,6 +155,8 @@
               <a href="https://scooterlab.utsa.edu/" target="_blank" rel="noopener noreferrer">scooterlab.utsa.edu</a>
               <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2234516" target="_blank" rel="noopener noreferrer">NSF #2234516</a>
               <a href="https://ieeexplore.ieee.org/abstract/document/11038542" target="_blank" rel="noopener noreferrer">PerCom 2025 paper</a>
+              <a href="https://scooterlab.utsa.edu/news/percom2025" target="_blank" rel="noopener noreferrer">PerCom 2025 demo</a>
+              <a href="https://scooterlab.utsa.edu/news/tii2024" target="_blank" rel="noopener noreferrer">Texas Innovation Invitational 2024 tech show</a>
               <a href="https://hdl.handle.net/20.500.12588/7651" target="_blank" rel="noopener noreferrer">Workshop 2025</a>
               <a href="https://scooterlab.utsa.edu/workshop2026/" target="_blank" rel="noopener noreferrer">Workshop 2026</a>
             </div>

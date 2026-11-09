@@ -1,6 +1,6 @@
 /* Publications — one object per paper. Newest first.
    Fields:
-     key        reference key, matches the CV ([C5] … [J1]); unpublished work uses U*
+     key        reference key, matches the CV ([C6] … [E1]); unpublished work uses U*
      type       "conference" | "journal" | "preprint"
      year       number
      title      string
@@ -21,16 +21,34 @@ SITE.me = "M. K. Buddhi Ashan";
 
 SITE.publications = [
   {
+    key: "C6",
+    type: "conference",
+    year: 2026,
+    title: "JPQ: Weighted-Jaccard-Aware Product Quantization for Billion-Scale Approximate Shape Similarity Search",
+    authors: ["M. K. Buddhi Ashan", "Ruban Sampath", "Sushil K. Prasad"],
+    venue: "Short paper, 2026 IEEE International Conference on Big Data (BigData). IEEE, 2026.",
+    badges: [{ text: "To appear" }, { text: "Acceptance rate 19.2%" }],
+    keywords: ["JPQ", "product quantization", "billion-scale", "weighted Jaccard", "approximate nearest neighbor", "polygon similarity", "vector index", "HNSW", "asymmetric distance computation"],
+    selected: true,
+    bibtex: `@inproceedings{ashan2026jpq,
+  author    = {Ashan, M. K. Buddhi and Sampath, Ruban and Prasad, Sushil K.},
+  title     = {JPQ: Weighted-Jaccard-Aware Product Quantization for Billion-Scale Approximate Shape Similarity Search},
+  booktitle = {2026 IEEE International Conference on Big Data (BigData)},
+  year      = {2026},
+  publisher = {IEEE},
+  note      = {Short paper, to appear}
+}`
+  },  {
     key: "C5",
     type: "conference",
     year: 2026,
     title: "ShapeToVec+: A Memory and Query-Efficient System for Weighted-Jaccard Search over Large-scale Polygon Collections",
     authors: ["M. K. Buddhi Ashan", "Ruban Sampath", "Sushil K. Prasad"],
-    venue: "34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (SIGSPATIAL '26), Riverside, CA. ACM, 2026.",
+    venue: "Short paper, 34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (SIGSPATIAL '26), Riverside, CA. ACM, 2026.",
     url: "https://doi.org/10.1145/3841645.3843377",
     urlLabel: "ACM Digital Library",
     doi: "10.1145/3841645.3843377",
-    badges: [{ text: "To appear" }],
+    badges: [],
     keywords: ["weighted Jaccard", "compression", "bitwise encoding", "integer encoding", "HNSW", "SIMD", "polygon similarity", "memory-efficient", "GIS", "vector index"],
     selected: true,
     bibtex: `@inproceedings{ashan2026shapetovecplus,
@@ -43,28 +61,17 @@ SITE.publications = [
   doi       = {10.1145/3841645.3843377}
 }`
   },
-  {
-    key: "U2",
-    type: "preprint",
-    year: 2026,
-    title: "JPQ: Weighted-Jaccard-Aware Product Quantization for Billion-Scale Approximate Shape Similarity Search",
-    authors: ["M. K. Buddhi Ashan", "Ruban Sampath", "Sushil K. Prasad"],
-    venue: "Under review, IEEE International Conference on Big Data (BigData), 2026.",
-    status: "Under review",
-    badges: [],
-    keywords: ["product quantization", "billion-scale", "weighted Jaccard", "approximate nearest neighbor", "polygon similarity", "vector index"],
-    selected: false
-  },
+
   {
     key: "U1",
     type: "preprint",
     year: 2026,
-    title: "Weighted-Jaccard-Native Distillation for Compact Polygon Similarity Search under Extreme Area Variation",
+    title: "Learning Compact Polygon Signatures via Weighted-Jaccard-Native Distillation for Large-Scale Similarity Search under Extreme Area Variation",
     authors: ["Ruban Sampath", "M. K. Buddhi Ashan", "Sushil K. Prasad"],
-    venue: "In preparation.",
-    status: "In preparation",
+    venue: "Under review, 9th IEEE International Workshop on Big Spatial Data (BSD 2026).",
+    status: "Under review",
     badges: [],
-    keywords: ["distillation", "learned encoder", "compact signatures", "weighted Jaccard", "polygon similarity"],
+    keywords: ["distillation", "learned encoder", "compact signatures", "weighted Jaccard", "polygon similarity", "BSD 2026", "big spatial data"],
     selected: false
   },
   {
@@ -155,7 +162,7 @@ SITE.publications = [
 }`
   },
   {
-    key: "J2",
+    key: "E2",
     type: "journal",
     year: 2020,
     title: "Performance Evaluation of Transfer Learning for Pornographic Detection",
@@ -177,7 +184,7 @@ SITE.publications = [
 }`
   },
   {
-    key: "J1",
+    key: "E1",
     type: "journal",
     year: 2016,
     title: "Recognition of Vehicle License Plates using MATLAB",
@@ -210,7 +217,7 @@ SITE.software = [
   {
     name: "jpq",
     url: "https://github.com/buddhi1/jpq",
-    keys: "U2",
+    keys: "C6",
     text: "Weighted-Jaccard-aware product quantization for billion-scale shape similarity search."
   },
   {

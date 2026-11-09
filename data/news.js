@@ -7,6 +7,9 @@
 window.SITE = window.SITE || {};
 
 SITE.news = [
+  { date: "2026-11", html: "Presented <em>ShapeToVec+</em> at <a href=\"https://doi.org/10.1145/3841645.3843377\" target=\"_blank\" rel=\"noopener noreferrer\">ACM SIGSPATIAL 2026</a>, Riverside, CA, supported by a SIGSPATIAL travel grant. <a href=\"assets/sigspatial26/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">Watch the poster animation</a>." },
+  { date: "2026-11", html: "<em>Learning Compact Polygon Signatures via Weighted-Jaccard-Native Distillation</em>, led by my master's mentee Ruban Sampath, submitted to the IEEE Big Spatial Data workshop (BSD 2026)." },
+  { date: "2026-10", html: "<em>JPQ</em>, the first product quantizer for the weighted-Jaccard metric, accepted as a short paper at IEEE BigData 2026 (19.2% acceptance rate)." },
   { date: "2026-08", html: "<em>ShapeToVec+</em> accepted at <a href=\"https://sigspatial2026.sigspatial.org/short-paper-accepted/\" target=\"_blank\" rel=\"noopener noreferrer\">ACM SIGSPATIAL 2026</a>, Riverside, CA." },
   { date: "2026-08", html: "<em>JPQ</em>, a weighted-Jaccard product quantizer for billion-scale shape search, submitted to IEEE BigData 2026." },
   { date: "2026-06", html: "Talk at the NAIRR Pilot Classroom Expansion Conference, Orlando: lessons from teaching CS 5463 with NAIRR resources. Supported by a Computing Research Association travel grant." },
@@ -20,7 +23,7 @@ SITE.news = [
   { date: "2025-09", html: "Poster at the Postdoctoral Appreciation Week presentations, UTSA Graduate School." }, // month to confirm
   { date: "2025-05", html: "Introduced RAMP at the <a href=\"https://scooterlab.utsa.edu/workshop2025/\" target=\"_blank\" rel=\"noopener noreferrer\">ScooterLab Workshop 2025</a>; organizing committee member." },
   { date: "2025-05", html: "Proceedings Chair for EduPar-25, held with IPDPS 2025." }, // month to confirm
-  { date: "2025-04", html: "Co-PI on an NSF ACCESS classroom award (100,000 credits) and an NSF NAIRR Pilot award (100,000 SUs on Jetstream2) supporting CS 5463 High Performance Machine Learning." },
+  { date: "2025-04", html: "Co-PI on an NSF ACCESS classroom award (100,000 credits on NCSA Delta) for CS 5463 High Performance Machine Learning; also wrote the course's NSF NAIRR Pilot proposal (100,000 SUs on Jetstream2)." },
   { date: "2025-04", html: "Poster at the NSF AI Spring School, MATRIX AI Consortium, UTSA." }, // month to confirm
   { date: "2025-03", html: "ScooterLab demo paper presented at <a href=\"https://ieeexplore.ieee.org/abstract/document/11038542\" target=\"_blank\" rel=\"noopener noreferrer\">IEEE PerCom 2025</a>." },
   { date: "2024-12", html: "Proceedings Chair for EduHiPC-24, held with HiPC 2024." }, // month to confirm
